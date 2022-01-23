@@ -67,5 +67,13 @@ const getCharacter = (name) => {
 
   return undefined;
 };
+console.log(getCharacter());
+console.log(getCharacter('Arya'));
+console.log(getCharacter('Brienne'));
+console.log(getCharacter('Melissandre'));
+console.log(getCharacter('ArYa'));
+console.log(getCharacter('Viviane'));
+
+// O método toLowerCase() retorna o valor da string original convertido para minúsculo. toLowerCase() não altera o valor da string original.
 
 module.exports = getCharacter;
