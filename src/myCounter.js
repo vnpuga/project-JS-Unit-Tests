@@ -17,14 +17,16 @@
 */
 
 const myCounter = () => {
-  var myArray = [];
-  for (var counter = 0; counter <= 3; counter += 1) {
+  const myArray = [];
+  for (let counter = 0; counter <= 3; counter += 1) {
     myArray.push(counter);
-    for (var counter = 2; counter <= 3; counter += 1) {
-      myArray.push(counter);
+    for (let index = 2; index <= 3; index += 1) {
+      myArray.push(index);
     }
   }
   return myArray;
 };
-
+console.log(myCounter());
+// alterei p/ const a variável myArray (var vaza escopo)
+// dentro do for, troquei var por let (pq o var vaza escopo e let não, e let permite reatribuir o valor), e corrigi o nome da variável no 2o for, q estava igual ao 1o.
 module.exports = myCounter;
