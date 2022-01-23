@@ -33,8 +33,30 @@
   arrayGenerator('entries', { sum: 3, mult: 2, div: 1, sub: 0 }) // [ [ 'sum', 3 ], [ 'mult', 2 ], [ 'div', 1 ], [ 'sub', 0 ] ]
 */
 
-const calculator = (number1, number2) => {};
+// A função  Math.floor(x) retorna o menor número inteiro dentre o número "x".
+const calculator = (number1, number2) => ({ 
+  sum: number1 + number2, 
+  mult: number1 * number2, 
+  div: Math.floor(number1 / number2), 
+  sub: number1 - number2,
+});
+console.log(calculator(1, 2));
 
-const arrayGenerator = (type, object) => {};
+const arrayGenerator = (type, object) => {
+  if (type === 'keys') {
+    return Object.keys(object);
+  } if (type === 'values') {
+    return Object.values(object);
+  } if (type === 'entries') {
+    return Object.entries(object);
+  }
+};
+console.log(arrayGenerator('keys', { sum: 3, mult: 2, div: 1, sub: 0 })); 
+console.log(arrayGenerator('values', { sum: 3, mult: 2, div: 1, sub: 0 })); 
+console.log(arrayGenerator('entries', { sum: 3, mult: 2, div: 1, sub: 0 })); 
+
+// Object.Keys retorna um array com as propriedades(chaves);
+// Object.values retorna um array com os valores das propriedades(chaves)
+// Object.entries retorna um array dos próprios pares [key, value]
 
 module.exports = { calculator, arrayGenerator };
